@@ -38,7 +38,7 @@
   .inputGroup :is(input:focus, input:valid)~label {
     transform: translateY(-20%); 
     font-size:10px;
-    margin: 0;
+    margin: 0 0 0 4px;
     padding-left:8px;
     padding: 0.4rem;
     color:#5E6488;
