@@ -1,21 +1,14 @@
-import React from "react";
+import "./header.scss";
 
 export const Header = () => {
   return (
-    <header className="row between-xs">
-      <div className="col-xs-3">
-        <img
-          src="/img/rimac_logo.png"
-          alt=""
-          style={{ height: "40px", width: "64px" }}
-        />
-      </div>
-      <div className="col-xs-6 row">
+    <header className="row between-xs header">
+      <img src="/icons/rimac.svg" alt="" className="header__logo" />
+
+      <div className="row contact">
         {/* <p>¡Compra por este medio!</p> */}
-        <div className="row">
-          <img src="/icons/Telephone.svg" alt="" />
-          <p>(01) 411 6001</p>
-        </div>
+        <img src="/icons/Telephone.svg" alt="" className="contact__img" />
+        <p className="contact__phone">(01) 411 6001</p>
       </div>
     </header>
   );

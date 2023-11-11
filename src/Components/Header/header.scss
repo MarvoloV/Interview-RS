@@ -1,0 +1,20 @@
+.header{
+    margin-top: 32px;
+    margin-bottom: 16px;
+    padding-inline: 24px;
+    display: flex;
+    align-items: center;
+    &__logo{
+        width: 65px;
+        height: 32px;
+    }
+    .contact{
+        
+        font-family: "BR Sonoma";
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        
+
+    }
+}
