@@ -1,8 +1,8 @@
-import { Footer, Header } from "../Components/";
+import { Footer, Header } from "../Components";
 import "../styles/Pages/Home.scss";
 import { Input, Checkbox, Select } from "../Components/Atoms";
 
-export const Home = () => {
+export const HomePage = () => {
   return (
     <>
       <Header />
