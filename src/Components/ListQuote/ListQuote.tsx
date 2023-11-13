@@ -13,15 +13,8 @@ export const ListQuote = ({ listQuote, activeCard, setActiveCard }: Props) => {
     setActiveCard(event.target.value);
   };
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "24px",
-          marginBottom: "32px",
-        }}
-      >
+    <div className="col-xs-12 col-md-6 quote__container">
+      <div className="quote__list">
         {listQuote.map((quote) => (
           <CardQuote
             title={quote.title}

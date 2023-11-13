@@ -1,0 +1,13 @@
+.list {
+    &__plan {
+        overflow-x: scroll;
+        flex-wrap: nowrap;
+        padding-bottom: 40px;
+    }
+
+    &__container {
+        overflow-x: hidden;
+        margin-bottom: 40px;
+
+    }
+}

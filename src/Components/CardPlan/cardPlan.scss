@@ -1,13 +1,15 @@
-.cardPlan{
+.cardPlan {
     margin-top: 20px;
     margin-inline: 27px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 40px 32px 48px 32px;
-    box-shadow:  0px 1px 32px 0px #AEACF359;
+    box-shadow: 0px 1px 32px 0px #AEACF359;
     border-radius: 24px;
-    &__header{
-        &-name{       
+
+    &__header {
+        &-name {
             font-family: Lato;
             font-size: 24px;
             font-weight: 900;
@@ -17,8 +19,9 @@
             width: 150px;
         }
     }
-    &__cost{
-        margin:0;
+
+    &__cost {
+        margin: 0;
         color: #7981B2;
         font-family: Lato;
         font-size: 12px;
@@ -28,52 +31,57 @@
         text-align: left;
         text-transform: uppercase;
     }
-    &__price{
-        margin:0;
+
+    &__price {
+        margin: 0;
         color: #141938;
         font-family: Lato;
         font-size: 20px;
         font-weight: 900;
         line-height: 28px;
-        letter-spacing: -0.20000000298023224px;
         text-align: left;
     }
-    &__description{
-            &-list{
-                list-style: none;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                gap:24px;
-                margin-bottom: 40px;
-            }
-            &-item{
-                display: flex;
-                gap:8px;
-            }
-            &-icon{
-                width: 20px;
-                height: 30px;
-            }
-            &-text{
-                font-family: Lato;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 28px;
-                letter-spacing: 0.1px;
-                text-align: left;
-                margin:0;
-            }
+
+    &__description {
+        &-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        &-item {
+            display: flex;
+            gap: 8px;
+        }
+
+        &-icon {
+            width: 20px;
+            height: 30px;
+        }
+
+        &-text {
+            font-family: Lato;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 28px;
+            letter-spacing: 0.1px;
+            text-align: left;
+            margin: 0;
+        }
     }
-    &__select-button{
-        margin:auto;
+
+    &__select-button {
+        margin-inline: auto;
         background: #FF1C44;
-        width:  224px;
-        height:  48px;
+        width: 224px;
+        height: 48px;
         padding: 14px 32px 14px 32px;
         border-radius: 32px;
-        border:0px;
-        color: #FFFFFF;        
+        border: 0px;
+        color: #FFFFFF;
         font-family: Lato;
         font-size: 18px;
         font-weight: 700;

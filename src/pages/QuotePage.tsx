@@ -39,10 +39,10 @@ export const QuotePage = () => {
     <div className=" container ">
       <Header />
 
-      <div id="quote" className="container">
+      <div id="quote" className="row center-xs ">
         {step === 1 && (
           <>
-            <div className="quote__intro">
+            <div className="quote__intro col-xs-12 col-md-6">
               <p className="quote__intro-title">
                 Rocío ¿Para quién deseas cotizar?
               </p>

@@ -1,13 +1,16 @@
-#home{
+#home {
     padding-inline: 18px;
-    .card{
+
+    .card {
         justify-content: space-between;
-        &__body{
+
+        &__body {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            &__sup{
-                
+
+            &__sup {
+
                 height: 20px;
                 padding-left: 8px;
                 padding-right: 8px;
@@ -16,30 +19,30 @@
                 background: linear-gradient(86deg, #00F4E2 0%, #00FF7F 100%);
                 border-radius: 8px;
                 font-weight: 700;
-                
-                
-                
             }
-            &__img{
+
+            &__img {
                 width: 138px;
                 height: 160px;
                 border-radius: 16px;
             }
-            &__title{
+
+            &__title {
                 width: 188px;
-                 color:black;
-                 font-size: 32px;
-                 font-family: 'BR Sonoma';
-                 font-weight: 700;
-                 line-height: 36px;
-                 margin: 0;
-                 margin-top:16px;
-                 
+                color: black;
+                font-size: 32px;
+                font-family: 'BR Sonoma';
+                font-weight: 700;
+                line-height: 36px;
+                margin: 0;
+                margin-top: 16px;
+
             }
         }
     }
-    .description{
-        // font-family: BR Sonoma;
+
+    .description {
+
         font-size: 14px;
         font-weight: 600;
         line-height: 20px;
@@ -47,31 +50,38 @@
         text-align: left;
 
     }
-    .form{
-        display:flex;
+
+    .form {
+        display: flex;
         flex-direction: column;
-        gap:16px;
-        .container{
-            margin-top: 8px;;
-            border:1px solid #5E6488;
-            border-radius:8px;
+        gap: 16px;
+
+        .container {
+            margin-top: 8px;
+            ;
+            border: 1px solid #5E6488;
+            border-radius: 8px;
         }
-        .link{
+
+        .link {
             font-family: "BR Sonoma";
             font-size: 12px;
             font-weight: 600;
             line-height: 20px;
             letter-spacing: 0.1px;
-            color:#03050F;
+            color: #03050F;
 
         }
-        &__select{
+
+        &__select {
             background-color: transparent;
         }
-        .button{
-            margin:auto;
-            margin-top: 32px ;
-            margin-bottom: 80px;;
+
+        .button {
+            margin: auto;
+            margin-top: 32px;
+            margin-bottom: 80px;
+            ;
             width: 336px;
             height: 56px;
             padding: 18px, 40px, 18px, 40px;
@@ -83,13 +93,12 @@
             line-height: 20px;
             letter-spacing: 0.5px;
             text-align: center;
-            &.primary{
-                color:#fff;
-                background-color:#03050F;
+
+            &.primary {
+                color: #fff;
+                background-color: #03050F;
             }
         }
-      
+
     }
 }
-
-

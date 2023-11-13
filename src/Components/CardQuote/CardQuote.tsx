@@ -17,15 +17,12 @@ export const CardQuote = ({
   srcIcon,
   value,
 }: Props) => {
-  const cardStyle = {
-    border: isActive ? "3px solid #141938" : "0px solid #ccc",
-    borderRadius: "24px",
-    padding: "10px",
-    boxShadow: "0px 1px 32px 0px #AEACF359",
-  };
-
   return (
-    <div style={cardStyle}>
+    <div
+      className={`col-xs-12 col-md-6 ${
+        isActive ? "card__quote-active" : "card__quote"
+      }`}
+    >
       <div className="radio-input">
         <input
           type="radio"
@@ -35,23 +32,28 @@ export const CardQuote = ({
           value={value}
           id={title}
         />
-        <label htmlFor={title}>
+        <label htmlFor={title} className="radio-input__label">
           <span
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
+            className="radio-input__check"
           >
-            <img src="./icons/ic_check.svg" alt="" />
+            <img
+              src="./icons/ic_check.svg"
+              alt=""
+              className="radio-input__check-icon"
+            />
           </span>
         </label>
       </div>
-      <div className="row">
-        <img src={srcIcon} alt="" />
-        <h3>{title}</h3>
+      <div className="card__row row">
+        <img src={srcIcon} alt="" className="row__icon" />
+        <h3 className="row__title">{title}</h3>
       </div>
-      <p>{content}</p>
+      <p className="card__content">{content}</p>
     </div>
   );
 };
