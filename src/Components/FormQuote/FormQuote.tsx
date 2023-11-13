@@ -2,7 +2,7 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Checkbox, Input, Select } from "..";
 import { UserData } from "../../store/reducer";
-import { GetInfoUser } from "../../services/Quote";
+import { getInfoUser } from "../../services/Quote";
 import { useContextQuote } from "../../store/QuoteProvider";
 import { setUserDataAction } from "../../store/actions";
 
@@ -39,7 +39,7 @@ export const FormQuote = () => {
   };
   const onSubmit = async (data: UserData) => {
     try {
-      const response = await GetInfoUser();
+      const response = await getInfoUser();
       const age = calculateAge(response.birthDay);
       const userInfo: UserData = {
         typeDocument: data.typeDocument,

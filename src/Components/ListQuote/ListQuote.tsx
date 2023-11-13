@@ -28,8 +28,9 @@ export const ListQuote = ({ listQuote, activeCard, setActiveCard }: Props) => {
             content={quote.content}
             srcIcon={quote.srcIcon}
             onCardClick={handleCardClick}
-            isActive={activeCard === quote.title}
+            isActive={activeCard === quote.value}
             key={quote.title}
+            value={quote.value}
           />
         ))}
       </div>

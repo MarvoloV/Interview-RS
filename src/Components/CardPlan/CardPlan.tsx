@@ -1,8 +1,10 @@
 import "./cardPlan.scss";
 import { List } from "../../interfaces/ListPlans";
+import { PlanData, useContextQuote, setPlanDataAction } from "../../store/";
 
 interface Props {
   plan: List;
+  setStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const listiconsDescription = [
@@ -17,7 +19,17 @@ const listiconsDescription = [
   },
 ];
 
-export const CardPlan = ({ plan }: Props) => {
+export const CardPlan = ({ plan, setStep }: Props) => {
+  const { dispatch } = useContextQuote();
+
+  const onClickPlan = () => {
+    const planInfo: PlanData = {
+      name: plan.name,
+      price: plan.price,
+    };
+    dispatch(setPlanDataAction(planInfo));
+    setStep(2);
+  };
   return (
     <div key={plan.name} className="col-xs-10 col-md-3 cardPlan">
       <div className="row between-xs cardPlan__header">
@@ -39,7 +51,9 @@ export const CardPlan = ({ plan }: Props) => {
           </li>
         ))}
       </ul>
-      <button className="cardPlan__select-button">Seleccionar Plan</button>
+      <button className="cardPlan__select-button" onClick={onClickPlan}>
+        Seleccionar Plan
+      </button>
     </div>
   );
 };

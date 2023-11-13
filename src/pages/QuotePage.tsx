@@ -1,98 +1,87 @@
 import "../styles/Pages/Quote.scss";
-import { Header, ListQuote, ListPlans } from "../Components";
+import { Header, ListQuote, ListPlans, PaymentSummary } from "../Components";
 import { QuoteItem } from "../interfaces/ListQuote";
-import { useState } from "react";
-import { List } from "../interfaces/ListPlans";
-// import { PaymentSummary } from "../Components/";
+import { useEffect, useState } from "react";
+import { List, getPlans } from "../services/Quote";
+import { useContextQuote } from "../store/QuoteProvider";
 
 const listQuote: QuoteItem[] = [
   {
+    value: "me",
     title: "Para mi",
     content: "Cotiza tu seguro de salud y agrega familiares si así lo deseas.",
     srcIcon: "./icons/IcProtectionLight.svg",
   },
   {
+    value: "other",
     title: "Para alguien más",
     content:
       "Realiza una cotización para uno de tus familiares o cualquier persona.",
     srcIcon: "./icons/IcAddUserLight.svg",
   },
 ];
-const list: List[] = [
-  {
-    name: "Plan en Casa",
-    price: 39,
-    description: [
-      "Médico general a domicilio por S/20 y medicinas cubiertas al 100%.",
-      "Videoconsulta y orientación telefónica  al 100% en medicina general + pediatría.",
-      "Indemnización de S/300 en caso de hospitalización por más de un día.",
-    ],
-    age: 60,
-  },
-  {
-    name: "Plan en Casa y Clínica",
-    price: 99,
-    description: [
-      "Consultas en clínica para cualquier especialidad.",
-      "Medicinas y exámenes derivados cubiertos al 80%.",
-      "Atención médica en más de 200 clínicas del país.",
-    ],
-    age: 70,
-  },
-  {
-    name: "Plan en Casa + Bienestar",
-    price: 70,
-    description: [
-      "Videoconsulta con especialistas de psicología y nutrición.",
-      "Acceso a videos y recursos sobre bienestar.",
-      "Incluye todos los beneficios del Plan en Casa.",
-    ],
-    age: 25,
-  },
-  {
-    name: "Plan en Casa + Chequeo ",
-    price: 49,
-    description: [
-      "Un Chequeo preventivo general de manera presencial o virtual.",
-      "Acceso a Vacunas en el Programa del MINSA en centros privados.",
-      "Incluye todos los beneficios del Plan en Casa.",
-    ],
-    age: 90,
-  },
-  {
-    name: "Plan en Casa + Fitness",
-    price: 45,
-    description: [
-      "Descuentos en más de 50 locales de gimnasio.",
-      "Beneficios exclusivos en alimentos nutricionales y complementos.",
-      "Incluye todos los beneficios del Plan en Casa.",
-    ],
-    age: 30,
-  },
-];
+
 export const QuotePage = () => {
   const [activeCard, setActiveCard] = useState("");
+  const { state } = useContextQuote();
+  const [list, setList] = useState<List[]>([]);
+  const [step, setStep] = useState(1);
+  const getListData = async () => {
+    const response = await getPlans();
+
+    setList(response.list);
+  };
+  useEffect(() => {
+    getListData();
+  }, []);
 
   return (
     <>
       <Header />
+
       <div id="quote" className="container">
-        {/* <PaymentSummary /> */}
-        <div className="quote__intro">
-          <p className="quote__intro-title">
-            Rocío ¿Para quién deseas cotizar?
-          </p>
-          <p className="quote__intro-subtitle">
-            Selecciona la opción que se ajuste más a tus necesidades.
-          </p>
-        </div>
-        <ListQuote
-          listQuote={listQuote}
-          activeCard={activeCard}
-          setActiveCard={setActiveCard}
-        />
-        {activeCard && <ListPlans list={list} />}
+        {step === 1 && (
+          <>
+            <div className="quote__intro">
+              <p className="quote__intro-title">
+                Rocío ¿Para quién deseas cotizar?
+              </p>
+              <p className="quote__intro-subtitle">
+                Selecciona la opción que se ajuste más a tus necesidades.
+              </p>
+            </div>
+            <ListQuote
+              listQuote={listQuote}
+              activeCard={activeCard}
+              setActiveCard={setActiveCard}
+            />
+            {activeCard && (
+              <ListPlans
+                list={list}
+                age={state.user.age!}
+                discount={activeCard === "other" ? 0.95 : 1}
+                setStep={setStep}
+              />
+            )}
+          </>
+        )}
+        {step === 2 && <PaymentSummary />}
       </div>
     </>
   );
 };
+
+/*  useEffect(() => {
+    const listUpdate = list.map((plan) => {
+      if (activeCard === "other") {
+        plan.price = (plan.price * (100 - discount)) / 100;
+      } else {
+        plan.price = plan.price * 1.05;
+      }
+      return plan;
+    });
+    console.log(
+      "🚀 ~ file: QuotePage.tsx:45 ~ listUpdate ~ listUpdate:",
+      listUpdate
+    );
+  }, [activeCard]); */

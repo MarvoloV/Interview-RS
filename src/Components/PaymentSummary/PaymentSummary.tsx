@@ -1,5 +1,7 @@
+import { useContextQuote } from "../../store";
 import "./paymentSummary.scss";
 export const PaymentSummary = () => {
+  const { state } = useContextQuote();
   return (
     <>
       <p className="title">Resumen del seguro</p>
@@ -12,15 +14,19 @@ export const PaymentSummary = () => {
             alt=""
             className="card__header__img"
           />
-          <span className="card__header__title">Rocio Miranda Díaz</span>
+          <span className="card__header__title">{state.user.fullName}</span>
         </div>
         <div className="card__body">
           <p className="card__body__title">Responsable de pago</p>
-          <p className="card__body__info">DNI: 444888888</p>
-          <p className="card__body__info">Celular: 5130216147</p>
+          <p className="card__body__info">
+            {state.user.typeDocument}: ${state.user.document}
+          </p>
+          <p className="card__body__info">Celular: {state.user.cellphone}</p>
           <p className="card__body__title">Plan elegido</p>
-          <p className="card__body__info">Plan en Casa y Clínica</p>
-          <p className="card__body__info">Costo del Plan: $99 al mes</p>
+          <p className="card__body__info">{state.plan.name}</p>
+          <p className="card__body__info">
+            Costo del Plan: ${state.plan.price} al mes
+          </p>
         </div>
       </div>
     </>

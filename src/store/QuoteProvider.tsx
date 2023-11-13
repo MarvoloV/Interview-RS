@@ -1,5 +1,11 @@
 // context.tsx
-import React, { createContext, useContext, useReducer, ReactNode } from "react";
+import React, {
+  createContext,
+  useContext,
+  useReducer,
+  ReactNode,
+  useEffect,
+} from "react";
 
 import { Action, InitialData, initialState, reducer } from "./reducer";
 // import { setUserDataAction } from "./actions";
@@ -16,8 +22,14 @@ interface MyProviderProps {
 }
 
 export const QuoteProvider: React.FC<MyProviderProps> = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
+  const storedState = sessionStorage.getItem("myContextState");
+  const [state, dispatch] = useReducer(
+    reducer,
+    storedState ? JSON.parse(storedState) : initialState
+  );
+  useEffect(() => {
+    sessionStorage.setItem("myContextState", JSON.stringify(state));
+  }, [state]);
   const contextValue: MyContextProps = {
     state,
     dispatch,

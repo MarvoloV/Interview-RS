@@ -6,6 +6,7 @@ interface Props {
   onCardClick: (event: React.ChangeEvent<HTMLInputElement>) => void;
   isActive: boolean;
   srcIcon: string;
+  value: string;
 }
 
 export const CardQuote = ({
@@ -14,6 +15,7 @@ export const CardQuote = ({
   onCardClick,
   isActive,
   srcIcon,
+  value,
 }: Props) => {
   const cardStyle = {
     border: isActive ? "3px solid #141938" : "0px solid #ccc",
@@ -30,7 +32,7 @@ export const CardQuote = ({
           name="color"
           checked={isActive}
           onChange={onCardClick}
-          value={title}
+          value={value}
           id={title}
         />
         <label htmlFor={title}>

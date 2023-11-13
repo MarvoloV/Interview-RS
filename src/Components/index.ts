@@ -6,3 +6,4 @@ export * from "./CardQuote/CardQuote";
 export * from "./ListPlans/ListPlans";
 export * from "./CardPlan/CardPlan";
 export * from "./FormQuote/FormQuote";
+export * from "./PaymentSummary/PaymentSummary";

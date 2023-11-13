@@ -3,9 +3,15 @@ import { List } from "../../interfaces/ListPlans";
 
 interface Props {
   list: List[];
+  age: number;
+  discount: number;
+  setStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const ListPlans = ({ list }: Props) => {
+export const ListPlans = ({ list, age, discount, setStep }: Props) => {
+  const listPlans = list
+    .filter((plan) => plan.age > age)
+    .map((plan) => ({ ...plan, price: plan.price * discount }));
   return (
     <div style={{ overflow: "hidden", marginBottom: "40px" }}>
       <div
@@ -16,11 +22,9 @@ export const ListPlans = ({ list }: Props) => {
           paddingBottom: "40px",
         }}
       >
-        {list
-          .filter((plan) => plan.age > 33)
-          .map((plan) => (
-            <CardPlan plan={plan} key={plan.name} />
-          ))}
+        {listPlans.map((plan) => (
+          <CardPlan plan={plan} key={plan.name} setStep={setStep} />
+        ))}
       </div>
     </div>
   );
