@@ -3,10 +3,10 @@ import "./paymentSummary.scss";
 export const PaymentSummary = () => {
   const { state } = useContextQuote();
   return (
-    <>
-      <p className="title">Resumen del seguro</p>
-
-      <div className="card">
+    <div className="container row center-xs">
+      <p className="title col-xs-12 col-md-10">Resumen del seguro</p>
+      <div className="card  col-xs-12 col-md-10">
+        <p className="title col-xs-12">Resumen del seguro</p>
         <span className="card__title">Precios calculados para:</span>
         <div className="card__header">
           <img
@@ -29,6 +29,6 @@ export const PaymentSummary = () => {
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 };

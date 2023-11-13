@@ -2,7 +2,7 @@ import "./header.scss";
 
 export const Header = () => {
   return (
-    <header className="row between-xs header">
+    <header className="col-xs-12 between-xs header ">
       <img src="/icons/rimac.svg" alt="" className="header__logo" />
 
       <div className="row contact">

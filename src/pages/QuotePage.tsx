@@ -36,7 +36,7 @@ export const QuotePage = () => {
   }, []);
 
   return (
-    <>
+    <div className=" container ">
       <Header />
 
       <div id="quote" className="container">
@@ -67,7 +67,7 @@ export const QuotePage = () => {
         )}
         {step === 2 && <PaymentSummary />}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -17,7 +17,7 @@ export const ListPlans = ({ list, age, discount, setStep }: Props) => {
       <div
         className="row "
         style={{
-          overflow: "scroll",
+          // overflowX: "scroll",
           flexWrap: "nowrap",
           paddingBottom: "40px",
         }}

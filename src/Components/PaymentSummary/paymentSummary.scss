@@ -8,13 +8,13 @@ $black:#141938;
         font-weight: 700;
         line-height: 40px;
         letter-spacing: -0.6px;
-        text-align: center;
+        text-align: left;
         
     }
     .card{
         box-shadow: 0px 1px 24px 0px #AEACF340;
         background: #FFFFFF;
-        height:  308px;
+        text-align: left;
         padding: 24px 32px 24px 32px;
         border-radius: 24px;
         gap: 16px;
@@ -54,6 +54,9 @@ $black:#141938;
                 line-height: 24px;
                 letter-spacing: 0.2px;                
                 color:$black;
+                &:nth-last-child(0){
+                    border: 1px solid;
+                }
             }
             &__info{                
                 font-family: Lato;
@@ -65,4 +68,11 @@ $black:#141938;
             }
         }
     }
+    .card__body{
+        
+        .card__body__title:nth-last-child(1){
+            background-color: red;
+        }
+    }
+    
 }
