@@ -19,7 +19,7 @@ export const ListPlans = ({ list }: Props) => {
         {list
           .filter((plan) => plan.age > 33)
           .map((plan) => (
-            <CardPlan plan={plan} />
+            <CardPlan plan={plan} key={plan.name} />
           ))}
       </div>
     </div>

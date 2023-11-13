@@ -1,10 +1,9 @@
 import { Footer, Header } from "../Components";
 import "../styles/Pages/Home.scss";
-import { Input, Checkbox, Select } from "../Components/Atoms";
-import { useContextQuote } from "../store/QuoteProvider";
+import { FormQuote } from "../Components/FormQuote/FormQuote";
 
 export const HomePage = () => {
-  const { state } = useContextQuote();
+  // const { dispatch } = useContextQuote();
 
   return (
     <>
@@ -23,23 +22,7 @@ export const HomePage = () => {
           Tú eliges cuánto pagar. Ingresa tus datos, cotiza y recibe nuestra
           asesoría, 100% online.
         </p>
-        <form action="" className=" form">
-          <div className="row container">
-            <Select />
-            <Input label="Nro. de documento" type="number" />
-          </div>
-          <Input
-            label="Celular"
-            classNameInputGroup="col-xs-12 radius"
-            type="number"
-          />
-          <Checkbox title={"Acepto la Política de Privacidad"} />
-          <Checkbox title={"Acepto la Política Comunicaciones Comerciales"} />
-          <a href="#" className="link">
-            Aplican Términos y Condiciones.
-          </a>
-          <button className="button primary">Cotiza aquí</button>
-        </form>
+        <FormQuote />
       </main>
       <Footer />
     </>

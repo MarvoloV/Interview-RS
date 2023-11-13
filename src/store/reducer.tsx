@@ -2,10 +2,10 @@
 
 export interface UserData {
   typeDocument: string;
-  documento?: string;
+  document?: string;
   cellphone?: string;
   fullName?: string;
-  birthday?: string;
+  age?: number;
 }
 export interface PlanData {
   name: string;
@@ -23,10 +23,10 @@ export type Action =
 export const initialState: InitialData = {
   user: {
     typeDocument: "",
-    documento: "",
+    document: "",
     cellphone: "",
     fullName: "",
-    birthday: "",
+    age: 0,
   },
   plan: {
     name: "",
