@@ -6,7 +6,11 @@ export const Checkbox = ({ title }: Props) => {
   return (
     <div className="checkbox-wrapper-33">
       <label className="checkbox">
-        <input type="checkbox" className="checkbox__trigger visuallyhidden" />
+        <input
+          type="checkbox"
+          className="checkbox__trigger visuallyhidden"
+          required
+        />
         <span className="checkbox__symbol">
           <svg
             xmlns="http://www.w3.org/2000/svg"

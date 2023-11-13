@@ -1,8 +1,11 @@
 import { Footer, Header } from "../Components";
 import "../styles/Pages/Home.scss";
 import { Input, Checkbox, Select } from "../Components/Atoms";
+import { useContextQuote } from "../store/QuoteProvider";
 
 export const HomePage = () => {
+  const { state } = useContextQuote();
+
   return (
     <>
       <Header />
