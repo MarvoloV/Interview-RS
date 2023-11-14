@@ -18,8 +18,5 @@ export const Select = ({ name }: Props) => {
         <img src="./icons/arrow_down.svg" alt="" />
       </div>
     </div>
-    // <select name="" id="" className="form__select">
-
-    // </select>
   );
 };
