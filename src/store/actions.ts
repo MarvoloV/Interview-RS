@@ -1,5 +1,5 @@
-// actions.ts
-import { Action, PlanData, UserData } from "./reducer";
+import { PlanData, UserData } from "../interfaces";
+import { Action } from "./reducer";
 
 export const setUserDataAction = (userData: UserData): Action => ({
   type: "SET_USER_DATA",

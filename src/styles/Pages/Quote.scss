@@ -8,6 +8,8 @@ body {
 #quote {
     padding-inline: 24px;
 
+
+
     .quote__intro {
         width: 336px;
         text-align: left;
@@ -57,6 +59,53 @@ body {
             &__list {
                 flex-direction: row;
             }
+        }
+    }
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    background: #EDEFFC;
+    width: 100vw;
+
+    .step {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &__counter {
+            font-family: Lato;
+
+            border: 1px solid #7981B2;
+            width: 28px;
+            height: 24px;
+            text-align: center;
+            border-radius: 16px;
+            padding-top: 4px;
+            color: #7981B2;
+
+            &-active {
+                background: #4F4FFF;
+                color: white;
+            }
+        }
+
+        &__text {
+            margin: 0;
+            font-family: Lato;
+            font-size: 16px;
+            line-height: 24px;
+            color: #7981B2;
+
+            &-active {
+                color: #141938;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+
         }
     }
 }

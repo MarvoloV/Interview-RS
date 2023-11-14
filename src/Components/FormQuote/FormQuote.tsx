@@ -1,10 +1,10 @@
 import { FormProvider, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { Checkbox, Input, Select } from "..";
-import { UserData } from "../../store/reducer";
 import { getInfoUser } from "../../services/Quote";
 import { useContextQuote } from "../../store/QuoteProvider";
 import { setUserDataAction } from "../../store/actions";
+import { UserData } from "../../interfaces";
 
 export const FormQuote = () => {
   const { dispatch } = useContextQuote();

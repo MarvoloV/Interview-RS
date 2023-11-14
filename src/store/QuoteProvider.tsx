@@ -1,4 +1,3 @@
-// context.tsx
 import React, {
   createContext,
   useContext,
@@ -7,8 +6,8 @@ import React, {
   useEffect,
 } from "react";
 
-import { Action, InitialData, initialState, reducer } from "./reducer";
-// import { setUserDataAction } from "./actions";
+import { Action, initialState, reducer } from "./reducer";
+import { InitialData } from "../interfaces";
 
 interface MyContextProps {
   state: InitialData;

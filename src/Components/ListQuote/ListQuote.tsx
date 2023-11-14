@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { CardQuote } from "../index";
-import { QuoteItem } from "../../interfaces/ListQuote";
+import { QuoteItem } from "../../interfaces";
 
 interface Props {
   listQuote: QuoteItem[];

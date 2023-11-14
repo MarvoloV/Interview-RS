@@ -1,6 +1,6 @@
 import "./cardPlan.scss";
-import { List } from "../../interfaces/ListPlans";
-import { PlanData, useContextQuote, setPlanDataAction } from "../../store/";
+import { List, PlanData } from "../../interfaces";
+import { useContextQuote, setPlanDataAction } from "../../store/";
 
 interface Props {
   plan: List;

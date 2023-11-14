@@ -1,6 +1,6 @@
 import "../styles/Pages/Quote.scss";
 import { Header, ListQuote, ListPlans, PaymentSummary } from "../Components";
-import { QuoteItem } from "../interfaces/ListQuote";
+import { QuoteItem } from "../interfaces";
 import { useEffect, useState } from "react";
 import { List, getPlans } from "../services/Quote";
 import { useContextQuote } from "../store/QuoteProvider";
@@ -36,52 +36,66 @@ export const QuotePage = () => {
   }, []);
 
   return (
-    <div className=" container ">
+    <div>
       <Header />
 
-      <div id="quote" className="row center-xs ">
-        {step === 1 && (
-          <>
-            <div className="quote__intro col-xs-12 col-md-6">
-              <p className="quote__intro-title">
-                Rocío ¿Para quién deseas cotizar?
-              </p>
-              <p className="quote__intro-subtitle">
-                Selecciona la opción que se ajuste más a tus necesidades.
-              </p>
-            </div>
-            <ListQuote
-              listQuote={listQuote}
-              activeCard={activeCard}
-              setActiveCard={setActiveCard}
-            />
-            {activeCard && (
-              <ListPlans
-                list={list}
-                age={state.user.age!}
-                discount={activeCard === "other" ? 0.95 : 1}
-                setStep={setStep}
+      <div className="steps">
+        <div className="step">
+          <p
+            className={`step__counter ${
+              step === 1 ? "step__counter-active" : ""
+            }`}
+          >
+            1
+          </p>
+          <p className={`step__text ${step === 1 ? "step__text-active" : ""}`}>
+            Planes y coberturas
+          </p>
+        </div>
+        <img src="./icons/line.svg" alt="" />
+        <div className="step">
+          <p
+            className={`step__counter ${
+              step === 2 ? "step__counter-active" : ""
+            }`}
+          >
+            2
+          </p>
+          <p className={`step__text ${step === 2 ? "step__text-active" : ""}`}>
+            Resumen
+          </p>
+        </div>
+      </div>
+      <div className="container">
+        <div id="quote" className="row center-xs ">
+          {step === 1 && (
+            <>
+              <div className="quote__intro col-xs-12 col-md-6">
+                <p className="quote__intro-title">
+                  Rocío ¿Para quién deseas cotizar?
+                </p>
+                <p className="quote__intro-subtitle">
+                  Selecciona la opción que se ajuste más a tus necesidades.
+                </p>
+              </div>
+              <ListQuote
+                listQuote={listQuote}
+                activeCard={activeCard}
+                setActiveCard={setActiveCard}
               />
-            )}
-          </>
-        )}
-        {step === 2 && <PaymentSummary />}
+              {activeCard && (
+                <ListPlans
+                  list={list}
+                  age={state.user.age!}
+                  discount={activeCard === "other" ? 0.95 : 1}
+                  setStep={setStep}
+                />
+              )}
+            </>
+          )}
+          {step === 2 && <PaymentSummary />}
+        </div>
       </div>
     </div>
   );
 };
-
-/*  useEffect(() => {
-    const listUpdate = list.map((plan) => {
-      if (activeCard === "other") {
-        plan.price = (plan.price * (100 - discount)) / 100;
-      } else {
-        plan.price = plan.price * 1.05;
-      }
-      return plan;
-    });
-    console.log(
-      "🚀 ~ file: QuotePage.tsx:45 ~ listUpdate ~ listUpdate:",
-      listUpdate
-    );
-  }, [activeCard]); */

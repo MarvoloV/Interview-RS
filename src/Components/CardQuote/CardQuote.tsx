@@ -33,14 +33,7 @@ export const CardQuote = ({
           id={title}
         />
         <label htmlFor={title} className="radio-input__label">
-          <span
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-            className="radio-input__check"
-          >
+          <span className="radio-input__check">
             <img
               src="./icons/ic_check.svg"
               alt=""

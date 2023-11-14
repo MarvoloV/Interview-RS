@@ -1,5 +1,5 @@
 import { CardPlan } from "../index";
-import { List } from "../../interfaces/ListPlans";
+import { List } from "../../interfaces";
 import "./listPlans.scss";
 interface Props {
   list: List[];
