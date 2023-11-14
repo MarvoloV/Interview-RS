@@ -58,7 +58,7 @@ export const FormQuote = () => {
   return (
     <FormProvider {...methods}>
       <form className="form" onSubmit={methods.handleSubmit(onSubmit)}>
-        <div className="row container">
+        <div className="row radius">
           <Select name={"typeDocument"} />
           <Input label="Nro. de documento" type="number" name={"document"} />
         </div>

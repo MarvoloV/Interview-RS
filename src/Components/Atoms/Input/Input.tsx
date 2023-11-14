@@ -10,13 +10,13 @@ interface Props {
 export const Input = ({
   label,
   name,
-  classNameInputGroup = "col-xs-6",
+  classNameInputGroup = "col-xs-6 col-md-7",
   type = "text",
 }: Props) => {
   const { register } = useFormContext();
 
   return (
-    <div className={`inputGroup ${classNameInputGroup}`}>
+    <div className={` ${classNameInputGroup} inputGroup`}>
       <input type={type} required autoComplete="off" {...register(name)} />
       <label>{label}</label>
     </div>

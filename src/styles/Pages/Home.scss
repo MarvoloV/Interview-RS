@@ -1,8 +1,31 @@
 #home {
     padding-inline: 18px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .img__blur__bottom,
+    .img__blur__top {
+        position: absolute;
+        height: 250px;
+        // height: 80%;
+    }
+
+    .img__blur__bottom {
+        bottom: -14%;
+        left: 0;
+
+    }
+
+    .img__blur__top {
+        top: -14px;
+        right: 0;
+    }
 
     .card {
         justify-content: space-between;
+        position: relative;
+        z-index: 2;
 
         &__body {
             display: flex;
@@ -10,15 +33,16 @@
             justify-content: center;
 
             &__sup {
-
+                font-family: 'BR Sonoma';
                 height: 20px;
                 padding-left: 8px;
                 padding-right: 8px;
-                padding-top: 2px;
+                padding-block: 4px;
                 padding-bottom: 2px;
                 background: linear-gradient(86deg, #00F4E2 0%, #00FF7F 100%);
                 border-radius: 8px;
                 font-weight: 700;
+                width: 170px;
             }
 
             &__img {
@@ -38,13 +62,28 @@
                 margin-top: 16px;
 
             }
+
+            &__description {
+                margin: 0 0px 16px 0px;
+                font-family: 'BR Sonoma';
+                font-size: 14px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: 0.5px;
+                text-align: left;
+                display: none;
+            }
+
+            .form__desktop {
+                display: none;
+            }
         }
     }
 
     .description {
-
+        font-family: 'BR Sonoma';
         font-size: 14px;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 20px;
         letter-spacing: 0.5px;
         text-align: left;
@@ -66,7 +105,7 @@
         .link {
             font-family: "BR Sonoma";
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             line-height: 20px;
             letter-spacing: 0.1px;
             color: #03050F;
@@ -100,5 +139,61 @@
             }
         }
 
+    }
+
+    @media (min-width: 768px) {
+        .card {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+
+            &__body {
+                &__img {
+                    object-fit: cover;
+                    width: 480px;
+                    height: 560px;
+                }
+
+                &__title {
+                    width: 100%;
+                    max-width: 352px;
+                    margin-bottom: 16px;
+                }
+
+                &__description {
+                    display: block;
+                }
+            }
+
+            .form__desktop {
+                display: block;
+            }
+        }
+
+        .description {
+            display: none;
+        }
+
+        .form__mobile {
+            display: none;
+        }
+    }
+}
+
+@media (min-width:768px) {
+    #home {
+        height: calc(100vh - 168px);
+
+        .img__blur__bottom {
+            bottom: 84px;
+            left: 0;
+            height: 80%;
+        }
+
+        .img__blur__top {
+            top: 0;
+            right: 0;
+            height: 80%;
+        }
     }
 }

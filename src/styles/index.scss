@@ -1,6 +1,36 @@
-body{
+body {
     margin: 0;
 }
-.row{
+
+.row {
     margin: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+@font-face {
+    font-family: 'BR Sonoma';
+    src: url(./fonts/BRSonoma-Bold.otf) format('opentype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'BR Sonoma';
+    src: url(./fonts/BRSonoma-Medium.otf) format('opentype');
+    font-weight: 500;
+    /* Medium */
+}
+
+@font-face {
+    font-family: 'BR Sonoma';
+    src: url(./fonts/BRSonoma-Regular.otf) format('opentype');
+    font-weight: normal;
+    /* Regular */
+}
+
+@font-face {
+    font-family: 'BR Sonoma';
+    src: url(./fonts/BRSonoma-Semibold.otf) format('opentype');
+    font-weight: 600;
+    /* Semibold */
 }

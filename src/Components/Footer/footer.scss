@@ -1,31 +1,44 @@
-$color-gray:#03050F;
-$color-white:#FFFFFF;
-$color-separator:#2B304E;
-.footer{
+$color-gray: #03050F;
+$color-white: #FFFFFF;
+$color-separator: #2B304E;
+
+.footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: $color-gray;
-    padding:32px 24px 32px 24px;
+    padding: 32px 24px 32px 24px;
     gap: 8px;
-    &__img{
+
+    &__img {
         width: 138px;
-        
+
     }
-    &__separator{
+
+    &__separator {
         margin-block: 12px;
         width: 100%;
         height: 1px;
         border-top: 1px solid $color-separator;
         opacity: 0.8;
     }
-    &__copyright{
-        color:$color-white;
+
+    &__copyright {
+        color: $color-white;
         font-family: "BR Sonoma";
         font-size: 12px;
         font-weight: 400;
         line-height: 20px;
         margin: 0;
+    }
+
+    @media (min-width:768px) {
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__separator {
+            display: none;
+        }
     }
 }

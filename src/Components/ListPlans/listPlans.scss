@@ -11,3 +11,14 @@
 
     }
 }
+
+@media (min-width:768px) {
+    .list {
+        &__plan {
+
+            justify-content: center;
+        }
+    }
+
+
+}

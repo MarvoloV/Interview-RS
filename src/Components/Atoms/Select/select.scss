@@ -1,28 +1,31 @@
 .custom-select {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  select {
-    width: 100%;
-    padding: 10px;
-    color:#03050F;
-    border: 0;
-    background-color: transparent;
-    font-family: "BR Sonoma";
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    
-    appearance: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 
-  }
-  
-  .select-arrow {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-40%);
-    pointer-events: none;
-  }
+select {
+  width: 100%;
+  padding: 10px;
+  color: #03050F;
+  border: 0;
+  background-color: transparent;
+  font-family: "BR Sonoma";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  appearance: none;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+}
+
+.select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-40%);
+  pointer-events: none;
+}
